@@ -1,1 +1,1 @@
-# school_website
+# School_website with python django framework
