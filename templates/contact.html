@@ -1,0 +1,36 @@
+{% extends 'index.html' %}    
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>  
+{% block contents %}
+<div class="col-lg-7 mx-auto px-5 py-5">
+   <div class="card">
+      <h5 class="card-header mx-1"> <strong>Contact Details</strong> </h5>
+      <div class="card-body">
+         <div class="mx-3">
+            <div class="text-bold py-2">
+               <img src="{% static 'media/icons/location.png'%}" alt="location" width="30" height="30">
+                <strong class="px-4">Tilottama-12, Pragatinagar</strong>
+            </div>
+            <div class="text-bold py-3">
+               <img src="{% static 'media/icons/phone.png'%}" alt="location" width="30" height="30">
+                <strong class="px-4">9866575320</strong>
+            </div>
+            <div class="text-bold py-3">
+               <img src="{% static 'media/icons/gmail.png'%}" alt="location" width="30" height="30">
+                <strong class="px-4">nilgiri2056@gmail.com</strong>
+            </div>
+          </div>
+      </div>
+    </div>   
+</div>
+{% endblock contents %}
+</body>
+</html>

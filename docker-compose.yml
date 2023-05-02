@@ -1,0 +1,8 @@
+version: '3.9.7'
+
+services:
+    django:
+        image: school_django_docker:0.0.1
+        build: .
+        ports:
+          - "8080:8080"

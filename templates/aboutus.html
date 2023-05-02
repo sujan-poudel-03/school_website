@@ -1,0 +1,101 @@
+{% extends 'index.html' %}    
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>  
+{% block contents %}
+<div class="col-lg-12 mx-auto px-5 py-3">
+   <div class="card">
+      <h5 class="card-header mx-1"> <strong>School Introduction</strong> </h5>
+      <div class="card-body">
+         <div class="mx-3">
+            <p>NCEBS was established on 2056 BS. in the beautiful place of Rupandehi, Nepal.</p>
+         </div>
+      </div>
+    </div>   
+</div>
+<!--School Management Committee-->
+<div class="container">
+   <h2 class="text-uppercase text-center my-5">School Management Committee</h2>
+   <div class="row">
+      <!--Spaces-->
+   <div class="col-lg-4">
+      </div>
+   {% for i in chairperson %}
+      <div class="col-lg-4">
+        <div class="text-center mb-2">
+          <img src="{% static 'media/icons/user.png' %}" class="rounded-circle" width="140" height="140" alt="Cinque Terre">
+        </div>
+        <h3 class="text-center"> {{ i.name }}   </h3>
+        <p class="text-center">
+          [{{i.post}}]
+        </p>
+        <p class="text-center">
+         <a class="btn btn-secondary" href="{% url 'ChairpersonMessage'%}">Chairperson Message »</a>
+       </p>
+      </div>
+   {% endfor %}
+      <!--Spaces-->
+      <div class="col-lg-4">
+      </div>
+   </div>
+   <div class="row my-5 pb-4">
+   {% for i in secretary%}
+      <div class="col-lg-3">
+         <div class="text-center mb-2">
+            <img src="{% static 'media/icons/user.png' %}" class="rounded-circle" width="140" height="140" alt="Cinque Terre">
+         </div>
+         <h3 class="text-center"> {{ i.name}}  </h3>
+         <p class="text-center">
+            {{i.post}}
+         </p>
+      </div>
+   {% endfor %}
+   {% for i in member %}
+      <div class="col-lg-3">
+         <div class="text-center mb-2">
+            <img src="{% static 'media/icons/user.png' %}" class="rounded-circle" width="140" height="140" alt="Cinque Terre">
+         </div>
+         <h3 class="text-center"> {{ i.name}}  </h3>
+         <p class="text-center">
+            {{i.post}}
+         </p>
+      </div>
+   {% endfor %}
+      
+   </div>
+   <!--Teachers and Staffs-->
+   <div class="mx-5 my-3">
+      <h2 class="text-center my-4">Teachers and Staffs </h2>
+      <table class="table table-bordered">
+         <thead  class="table-primary"> 
+           <tr class="text-left">
+             <th scope="col">SN</th>
+             <th scope="col">Full Name</th>
+             <th scope="col">Education</th>
+             <th scope="col">Role</th>
+             <th scope="col">Subject</th>
+           </tr>
+         </thead>
+         <tbody>
+      {% for i in ts_obj %}
+           <tr>
+             <th scope="row" class="text-left">1</th>
+             <td>{{ i.name }}</td>
+             <td>{{ i.education }}</td>
+             <td>{{ i.role }}</td>
+             <td>{{ i.subject }}</td>
+           </tr>
+      {% endfor %}
+         </tbody>
+       </table>
+   </div>   
+{% endblock contents %}
+</body>
+</html>
